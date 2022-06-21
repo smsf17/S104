@@ -1,40 +1,39 @@
 package n1exercici3SamayoaS;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Exception {
-	private ArrayList<Integer> numeros= new ArrayList<Integer>();;
-	private int sumaNumeros;
+private List<String> month = new ArrayList<String>(); 
 	
-	public ArrayList<Integer> getNumeros() {
-		return numeros;
+	public List<String> getMonth() {
+		return month;
 	}
 
-	public void addNumero(Integer numero) {
-		numeros.add(numero);
+	/*public int size () {
+		return month.size();	
+	}*/
+	
+	public void addMonth(String mes) {
+		month.add(mes);	
 	}
 
-	public int getSumaNumeros() {
-		return sumaNumeros;
-	}
+	@Override
+	public String toString() {
+		return "Month [month=" + month + "]";
+	}	
 
-	public void setSumaNumeros(int sumaNumeros) {
-		this.sumaNumeros = sumaNumeros;
-	}
 
-	public void sumaNumerosException() {
+	public void PrintException() {
 		try
 		{
-			for(int i=0; i<numeros.size(); i++) {
-				sumaNumeros = numeros.get(i) + sumaNumeros;				
-			}
-
+			System.out.println(month.toString());			
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{
-			System.out.println("No hay numeros en la lista");	
+			System.out.println("No hay nada en la lista");	
 		}
 		
-		}
+	}
 
 }
