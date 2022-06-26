@@ -1,19 +1,26 @@
 package n1exercici3SamayoaS;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ExceptionTest {
 
-	 Exception obj = new Exception ();  
+	Exception obj = new Exception ();
 
 	 @Test
-	 public void test1() {
-		
-		 obj.PrintException();
+	 void testIndexOutBoundsException() {
+		 
+		 obj.addMonth("enero");
+		 obj.addMonth("febrero");
+		 obj.addMonth("marzo");
+		 obj.addMonth("abril");
+		 obj.addMonth("mayo");
+		 obj.addMonth("junio");
+		 obj.addMonth("julio");
+		 Assertions.assertThrows(IndexOutOfBoundsException.class,
+				 () -> obj.august2());  
 	 }
-	}
 
+
+}
 
